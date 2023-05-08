@@ -3,7 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import Logout from './Auth/Logout'
-import { BsBootstrapReboot, BsListUl, BsConeStriped, BsPalette2, BsChevronLeft, BsAlignTop } from 'react-icons/bs';
+import { BsBootstrapReboot, BsConeStriped, BsPalette2, BsChevronLeft, BsAlignTop } from 'react-icons/bs';
 
 export default function Navigation() {
   const { currentUser } = useAuth()
