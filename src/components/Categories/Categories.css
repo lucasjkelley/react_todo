@@ -1,0 +1,9 @@
+section.categories {
+    background-image: url('../Images/background.jpg');
+    background-size: 100%;
+    min-height: 78vh;
+    background-color: black;
+}
+section.categories article.categoriesTitle {
+    background-color: #0055C9;
+}
