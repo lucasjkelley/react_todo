@@ -7,8 +7,10 @@ export default function Profile() {
     
   return (
     <span className='profile p-2'>
-        Hello {!currentUser.displayName ? currentUser.email : currentUser.displayName.split(' ')[0]}!
-        <img src={currentUser.photoURL} alt={`${currentUser.displayName} Github Avatar`} />
+        
+        
+        {/* <img src={currentUser.photoURL} alt={`${currentUser.displayName} Github Avatar`} /> */}
+       
     </span>
   )
 }
