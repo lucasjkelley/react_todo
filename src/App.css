@@ -3,3 +3,16 @@
   margin-bottom: 0 !important;
   text-align: center;
 }
+
+.navbar-nav {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.2em!important;
+  
+}

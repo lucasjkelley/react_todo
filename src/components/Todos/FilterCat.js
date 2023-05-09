@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import {ImEye, ImEyeBlocked} from 'react-icons/im'
+
 
 export default function FilterCat(props) {
     const [categories, setCategories] = useState([]);
@@ -21,6 +23,14 @@ export default function FilterCat(props) {
                 {cat.catName}
             </button>
             )}
+             {!props.showDone ?
+                <button className="btn btn-success m-1" onClick={() => props.setShowDone(!props.showDone)}>
+                    Show Complete &ensp;<ImEye />
+                </button>:
+                <button className="btn btn-warning m-1" onClick={() => props.setShowDone(!props.showDone)}>
+                    Hide Complete &ensp;<ImEyeBlocked/> 
+                </button>
+            }   
     </div>
   )
 }

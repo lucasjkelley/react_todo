@@ -4,13 +4,14 @@ import { FaEdit, FaTrashAlt } from 'react-icons/fa'
 import axios from 'axios'
 import TodoEdit from './TodoEdit'
 
+
 export default function SingleTodo(props) {
   const { currentUser } = useAuth()
   const [showEdit, setShowEdit] = useState(false);
 
   const deleteTodo = (id) => {
     if(window.confirm(`Are you sure you want to delete ${props.todo.name}?`)){
-      axios.delete(`http://todoapi.lucasjkelley.com/api/Resources/${id}`).then(() => props.getTodos())
+      axios.delete(`http://todoapi.lucasjkelley.com/api/Todos/${id}`).then(() => props.getTodos())
     }
   }
 
@@ -21,9 +22,9 @@ export default function SingleTodo(props) {
         done: !props.todo.done,
         categoryId: props.todo.categoryId
     }
-    axios.put(`http://todoapi.lucasjkelley.com/api/Resources/${props.todo.toDoId}`, updatedToDo).then(response => {
+    axios.put(`http://todoapi.lucasjkelley.com/api/Todos/${props.todo.toDoId}`, updatedToDo).then(response => {
         console.log(response)
-        props.getToDos()
+        props.getTodos()
     })
 }
 

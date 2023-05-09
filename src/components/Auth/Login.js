@@ -5,6 +5,7 @@ import React from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { Container, Card } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import './Auth.css'
 
 export default function Login() {
     //Step 2: destructure the needed object(s) off of the useAuth() function

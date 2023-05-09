@@ -47,7 +47,7 @@ export default function Todos() {
         }
         {/* CREATE UI ENDS */}
 
-        <FilterCat setFilter={setFilter} />
+        <FilterCat setFilter={setFilter} showDone={showDone} setShowDone={setShowDone} />
         <Container className='pt-4 pb-5'>
         <Table striped bordered hover variant='dark'>
           <thead>
