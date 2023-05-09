@@ -11,7 +11,7 @@ export default function TodoForm(props) {
     }, []);
 
     const handleSubmit = (values) => {
-        console.log(values)
+        
         if(!props.todo) {
             const todoToCreate = values
 
@@ -23,12 +23,11 @@ export default function TodoForm(props) {
         else{
             const todoToEdit = {
                 todoId: props.todo.todoId,
-                name: values.name,                
-                description: values.description,
+                name: values.name, 
                 categoryId: values.categoryId
             }
 
-            axios.put(`http://todoapi.lucasjkelley.com/api/Resources/${props.todo.todoId}`, todoToEdit).then(() => {
+            axios.put(`http://todoapi.lucasjkelley.com/api/Todos/${props.todo.todoId}`, todoToEdit).then(() => {
                 props.setShowEdit(false)
                 props.getTodos()
             })
@@ -40,7 +39,7 @@ export default function TodoForm(props) {
     <Formik 
         initialValues={{
             name: props.todo ? props.todo.name : '',
-            description: props.todo ? props.todo.description : '',
+            // description: props.todo ? props.todo.description : '',
             categoryId: props.todo ? props.todo.categoryId : ''
         }}
         validationSchema={todoSchema}
@@ -52,7 +51,7 @@ export default function TodoForm(props) {
                     <Field name='name' className='form-control' placeholder='ToDo Name' />
                     {errors.name && touched.name && <div className="text-danger">{errors.name}</div> }
                 </div>
-                <div className="form-group m-3">
+                {/* <div className="form-group m-3">
                     <Field 
                         name='description' 
                         className='form-control' 
@@ -60,7 +59,7 @@ export default function TodoForm(props) {
                         as='textarea'
                         style={{ resize: 'none', height: '5em'}} />
                     {errors.description && touched.description && <div className="text-danger">{errors.description}</div> }
-                </div>
+                </div> */}
                 <div className="form-group m-3">
                     <Field name='categoryId' className='form-control' as='select'>
                         <option value='' disabled>
